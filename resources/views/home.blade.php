@@ -10,8 +10,8 @@
 <body>
     <div class="header">
         <div class="display-flex-align mid-gap">
-            <span class="material-symbols-sharp action-icon-light cursor-pointer" onclick="redirect('/connect')">
-            west
+            <span class="material-symbols-sharp action-icon-light cursor-pointer" onclick="redirect('/devices')">
+            reset_tv
             </span>
             <span class="material-symbols-sharp cursor-pointer">
             home
@@ -26,7 +26,18 @@
             </div>
         </div>
         <div class="display-flex-align mid-gap">
-            <span>Last active - <span id="lastactive"></span></span>
+            <div class="display-flex-align">
+                <span class="material-symbols-sharp">
+                account_circle
+                </span>
+                <span>{{ $data->logged_user }}</span>
+            </div>
+            <div class="display-flex-align">
+                <span class="material-symbols-sharp">
+                history_toggle_off
+                </span>
+                <span id="lastactive"></span>
+            </div>
             <form id="connectform" action="/connect/post" method="get">
                 @csrf
                 @method("GET")
@@ -40,15 +51,15 @@
                     <div class="button-div cursor-pointer" onclick="submitForm('connectform')">
                         <span>Reconnect</span>
                     </div>
+                    <span class="material-symbols-sharp action-icon-dark cursor-pointer" onclick="redirect('/edit_device/{{ $data->id }}')">
+                    tune
+                    </span>
                 </div>
             </form>
         </div>
     </div>
     <div class="display-flex-center-top">
         <div class="frame-binder">
-            <div class="">
-                
-            </div>
             <img class="frame">
         </div>
     </div>

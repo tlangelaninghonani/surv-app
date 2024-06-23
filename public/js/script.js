@@ -45,7 +45,7 @@ function connect(ipaddress, port){
         frame.src = url;
         // frame.style.filter = 'grayscale(100%)';
 
-        document.querySelector(".frame-binder").style.display = "block";
+        document.querySelector(".frame").style.display = "block";
 
         setTimeout(() => {
             URL.revokeObjectURL(url);
